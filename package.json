@@ -1,0 +1,14 @@
+{
+  "name": "mangavault",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "pnpm -C frontend dev & pnpm -C backend dev",
+    "build": "pnpm -C frontend build && pnpm -C backend build",
+    "lint": "pnpm -C frontend lint && pnpm -C backend lint"
+  }
+}
