@@ -1,0 +1,34 @@
+name = "mangavault-api"
+main = "src/index.ts"
+compatibility_date = "2025-03-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+ENVIRONMENT = "development"
+ADMIN_TOKEN = "changeme"
+PUBLIC_BASE_URL = "http://localhost:8787"
+DEFAULT_CONCURRENCY = "4"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "mangavault"
+database_id = "e2f2239b-2459-422c-b989-178d0fc3868e"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "c866023c35e5477198565a270ff7c906"
+
+
+
+
+
+[[durable_objects.bindings]]
+name = "RATE_LIMITER"
+class_name = "RateLimiterDO"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["RateLimiterDO"]
+
+[browser]
+binding = "BROWSER"
